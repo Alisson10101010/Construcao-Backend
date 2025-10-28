@@ -1,3 +1,4 @@
+
 const express = require('express')
 const router = express.Router()
 const Livro = require('../models/Livro')
@@ -18,7 +19,7 @@ router.post('/', validarLivro, async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const livros = await Livro.find()
-    res.json(livos)
+    res.json(livros)
   } catch (err) {
     res.status(500).json({ erro: 'Erro ao buscar livros' })
   }
